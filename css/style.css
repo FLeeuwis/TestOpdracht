@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logonaam {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-right: 1.5rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.start-btn {
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  color: red;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.oplossing {
+  height: 60vh;
+  background: url("../images/shutterstock_704928292.png") no-repeat center
+    center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.oplossing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.oplossing-btn {
+  border: 1px solid white;
+  padding: 0.8rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.diensten {
+  padding: 2rem;
+  text-align: center;
+}
+
+.diensten h2 {
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.dienst img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.dienst h3 {
+  margin-top: 0.5rem;
+}
+
+.all-diensten {
+  display: block;
+  margin-top: 1rem;
+  color: red;
+  text-decoration: underline;
+}
