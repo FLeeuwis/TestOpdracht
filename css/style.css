@@ -9,93 +9,202 @@ body {
   line-height: 1.6;
 }
 
+.container {
+  max-width: 1000px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 header {
   background-color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 header .logonaam {
+  grid-column: 1 / 2;
   font-weight: bold;
-  font-size: 1.5rem;
+  color: #707070;
+  font-size: 0.9rem;
+  justify-self: start;
 }
 
 header nav ul {
+  grid-column: 2 /3;
   display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 header nav ul li {
-  margin-right: 1.5rem;
+  margin: 0 1rem;
 }
 
 header nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #232323;
+  font-size: 0.8rem;
 }
 
 .start-btn {
+  grid-column: 3/4;
+  justify-self: end;
   border: 1px solid red;
   padding: 0.5rem 1rem;
   color: red;
   text-decoration: none;
   border-radius: 20px;
+  font-size: 0.8rem;
 }
 
 .oplossing {
-  height: 60vh;
+  position: relative;
+  height: 70vh;
   background: url("../images/shutterstock_704928292.png") no-repeat center
     center/cover;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
 }
 
-.oplossing-content h1 {
-  font-size: 2.5rem;
+.oplossing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.oplossing .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 2;
+  height: 100%;
+}
+
+.oplossing .tekst {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-align: left;
+}
+
+.oplossing h1 {
   margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: #fff;
 }
 
 .oplossing-btn {
+  display: inline-block;
+  max-width: fit-content;
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
   border: 1px solid white;
-  padding: 0.8rem 1.5rem;
-  color: #fff;
+  color: white;
   text-decoration: none;
   border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.oplossing-btn:hover {
+  background: #fff;
+  color: #000;
 }
 
 .diensten {
-  padding: 2rem;
-  text-align: center;
+  padding: 2rem 0;
+}
+
+.diensten .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.diensten .container-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .diensten h2 {
-  margin-bottom: 2rem;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.diensten .all-diensten {
+  color: red;
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dienst {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
 }
 
 .dienst img {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
+  height: 100%;
+  transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
-.dienst h3 {
-  margin-top: 0.5rem;
+.dienst:hover img {
+  transform: scale(1.05);
 }
 
-.all-diensten {
-  display: block;
-  margin-top: 1rem;
-  color: red;
-  text-decoration: underline;
+.overlay-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem;
+}
+
+.overlay-content h3 {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.arrow {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
 }
