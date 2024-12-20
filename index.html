@@ -10,7 +10,12 @@
     <header class="nav-container">
       <nav>
         <div class="logonaam">Every Day</div>
-        <ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">Diensten</a></li>
           <li><a href="#">Projecten</a></li>
@@ -77,4 +82,18 @@
       </div>
     </section>
   </body>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    const startBtn = document.querySelector(".start-btn");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      if (navLinks.classList.contains("active")) {
+        startBtn.classList.add("hamburger-mode");
+      } else {
+        startBtn.classList.remove("hamburger-mode");
+      }
+    });
+  </script>
 </html>
